@@ -132,3 +132,44 @@ If you want to push your locally built image to Docker Hub or another registry, 
    ```bash
    docker pull energeticacoop/openerp-energetica:latest
    ```
+
+## 🐝 Add an direct access icon in Ubuntu
+
+### 1. Create a `.desktop` file for the Application
+
+The `.desktop` file is used to define how the application will appear in your application menu and how it will behave when launched. In this example, we will create a `.desktop` file for the OpenERP application.
+
+Run the following command to open the `.desktop` file in a text editor:
+
+```bash
+nano $HOME/.local/share/applications/openERP.desktop
+```
+
+Inside the editor, you will define the following parameters in the `.desktop` file:
+
+```ini
+[Desktop Entry]
+Type=Application
+Icon=som
+Name=OpenERP
+Exec=/home/<user>/.openerp/erpclient.sh
+Terminal=true
+Hidden=false
+OnlyShowIn=GNOME;
+```
+
+### 2. Move the Icon Image to the Appropriate Directory
+
+To ensure the system can find and use the icon, move the image (`som.png`) to the appropriate icons directory:
+
+```bash
+sudo mv som.png /usr/share/icons/
+```
+
+### 4. Refresh the Application Database
+
+To ensure the system picks up the new `.desktop` file and icon, you may need to refresh the application database. Run the following command:
+
+```bash
+update-desktop-database ~/.local/share/applications
+```
