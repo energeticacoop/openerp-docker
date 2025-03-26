@@ -133,7 +133,7 @@ If you want to push your locally built image to Docker Hub or another registry, 
    docker pull energeticacoop/openerp-energetica:latest
    ```
 
-## 🐝 Add an direct access icon in Ubuntu
+## 🐝 Add an Direct Access Icon in Ubuntu
 
 ### 1. Create a `.desktop` file for the Application
 
@@ -145,7 +145,7 @@ Run the following command to open the `.desktop` file in a text editor:
 nano $HOME/.local/share/applications/openERP.desktop
 ```
 
-Inside the editor, you will define the following parameters in the `.desktop` file:
+Add the following parameters in the `.desktop` file:
 
 ```ini
 [Desktop Entry]
@@ -157,6 +157,8 @@ Terminal=true
 Hidden=false
 OnlyShowIn=GNOME;
 ```
+
+Replace \<user\> with your username.
 
 ### 2. Move the Icon Image to the Appropriate Directory
 
